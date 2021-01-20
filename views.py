@@ -41,7 +41,7 @@ def update_xrates(from_currency=None, to_currency=None):
 
 @app.route('/logs')
 @app.route('/logs/<int:pages>')
-@check_ip
+#@check_ip
 def view_logs(pages=None):
     return ViewLogs().call(pages)
 
