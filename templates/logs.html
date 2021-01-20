@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block title %}
+    <title>Logs XRates</title>
+    {% endblock title %}
+    {% block main_block %}
+
+                <h1 class="text-center">Welcome in Apilogs!</h1>
+                    {% if not logs %}
+                        <br>
+                        <h2>No logs!</h2>
+                    {% endif %}
+                    <ul>
+                    {% for log in logs %}
+                        <li>{{ log.json() }}</li>
+                    {% endfor %}
+                    </ul>
+                    <br>
+                    <h4><a href="/xrates"> Go XRates >></a><br>
+                    Pages:
+                    {% for i in range(count_page) %}
+                    <a href="{{url_for('view_logs', page=i+1)}}">{{i+1}},</a>
+                    {% endfor %}
+                    </h4>
+
+
+    {% endblock main_block %}

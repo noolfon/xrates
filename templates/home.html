@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+    {% block title %}
+    <title>View Homepage</title>
+    {% endblock title %}
+    {% block main_block %}
+    <section>
+        <h1 class="text-center">Welcome to my practical project!</h1>
+        <br>
+        <div class="row align-items-center">
+            <div class="col-4"><img src="{{ url_for('static', filename='image/kurmashev.png') }}" class="img-fluid" alt="Kurmashev Aleksey"></div>
+            <div class="col-8">
+                <p class="lead">
+                    Hello! My name is <strong>Alexey Kurmashev</strong>, and I'm a junior Python developer.
+                    This website was written by me as a practical work to develop skills in developing web applications.
+                </p>
+                <p class="lead">
+                    <strong>Technologies used:</strong>
+                        <ul class="list-unstyled">
+                            <ul>
+                              <li>Python 3.8.5</li>
+                              <li>Flask 1.1.2</li>
+                              <li>ORM peewee 3.14.0</li>
+                              <li>Database SQLlite(for production PostgreSQL)</li>
+                            </ul>
+                        </ul>
+                </p>
+                <p class="lead">
+                    <strong>Application functionality:</strong>
+                        <ul class="list-unstyled">
+                            <ul>
+                              <li>Api of exchange rates in json and xml</li>
+                              <li>Currency table with the ability to update the rate online</li>
+                              <li>Logging</li>
+                              <li>IP blocking</li>
+                              <li>Update of exchange rates every 10 minutes</li>
+                            </ul>
+                        </ul>
+                </p>
+            <a class="btn btn-dark" href="https://github.com/noolfon/my_practice" role="button"  target="_blank">Project link to Github</a>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <a class="btn btn-dark" href="/xrates" role="button">Go XRates</a>
+        </div>
+        <br><br><br>
+    </section>
+    {% endblock main_block %}

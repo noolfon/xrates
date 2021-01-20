@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+    {% block title %}
+    <title>View Xrates</title>
+    {% endblock title %}
+    {% block main_block %}
+    {% if not xrates %}
+    <h1>No rates!</h1>
+    {% endif %}
+
+    <h2 class="text-center">XRates</h2>
+
+    <table class="table table-bordered">
+        <tread  class="table-dark">
+            <tr align="center">
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Update</th>
+                <th scope="col"><a href="{{url_for('update_xrates')}}">Update All</a></th>
+            </tr>
+        </tread>
+        {% for rate in xrates %}
+        <tr align="center">
+            <td>{{ rate.from_currency }}</td>
+            <td>{{ rate.to_currency }}</td>
+            <td>{{ rate.rate }}</td>
+            <td>{{ rate.updated }}</td>
+            <td><a href="{{url_for('update_xrates', from_currency=rate.from_currency, to_currency=rate.to_currency)}}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p class="lead">
+        1000 = BTC , 643 = RUB , 840 = USD , 980 = UAH
+    </p>
+    <br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a class="btn btn-dark" href="/" role="button">Come back</a>
+    </div>
+
+{% endblock main_block %}
