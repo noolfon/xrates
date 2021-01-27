@@ -8,7 +8,7 @@ import api as api
 
 sched = BlockingScheduler()
 
-dictConfig(config.LOGGING)
+dictConfig(config.LOGGER_CONFIG)
 log = logging.getLogger("Tasks")
 
 
